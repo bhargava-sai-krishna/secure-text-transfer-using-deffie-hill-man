@@ -52,4 +52,18 @@ pip install Flask-SocketIO
 
 -----
 
-# Explination Of Code:
+# Explination Of Application And Code:
+
+As this is a chat room one of the 2 user keys will be assigned by the server, user only have to choose the second private key and everyone who are willing to enter the chat room have to use the same private key
+
+The user will first see the home page where they will be asked the name and then a private key
+
+If he is the first user then he can click the create room option otherwise he can enter the room code and click on join room
+
+There the users can see the chat area, each of the message is recorded using the time stamps
+
+In the client side the JavaScript will encrypt the message by the user
+
+The encrypted message will be decrypted at the client side using python which will then render it in the client side chat area 
+
+All of the clients are maintained as sockets which will store the information related to client like name, room, private key
