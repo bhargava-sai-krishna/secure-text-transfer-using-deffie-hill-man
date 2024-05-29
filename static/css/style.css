@@ -1,7 +1,28 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.con {
+  max-width: 800px; /* Example max-width */
+  padding: 20px; /* Add padding around the content */
+  background-color: #f0f0f0; /* Example background color */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 5px; /* Add border radius */
 }
 
 .buttons {
@@ -23,27 +44,34 @@
 }
 
 .message-box {
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 10px;
-  background-color: whitesmoke;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-  align-items: stretch;
+  width: 90vw; /* 90% of the viewport width */
+  height: 90vh; /* 90% of the viewport height */
+  max-width: 600px; /* Example max-width to limit on larger screens */
+  margin: auto; /* Center horizontally */
+  margin-top: 5vh; /* Adjust top margin for vertical centering */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Push items to top and bottom */
 }
 
+/* Styles for the messages */
 .messages {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   overflow-y: scroll;
-  flex: 1;
-  width: 100%;
+  max-height: 70vh; /* 70% of the viewport height */
 }
+
 
 .inputs {
-  padding: 10px;
   display: flex;
+  align-items: center;
 }
 
 h2 {
@@ -55,15 +83,31 @@ h2 {
 }
 
 .text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-bottom: 10px;
 }
 
 .muted {
   font-size: 10px;
   color: darkgray;
+}
+
+.inputs input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.inputs button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inputs button:hover {
+  background-color: #0056b3;
 }
