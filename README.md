@@ -60,10 +60,34 @@ The user will first see the home page where they will be asked the name and then
 
 If he is the first user then he can click the create room option otherwise he can enter the room code and click on join room
 
-There the users can see the chat area, each of the message is recorded using the time stamps
+There the users can see the chat area, each of the message is recorded using the time stamps 
 
 In the client side the JavaScript will encrypt the message by the user
 
 The encrypted message will be decrypted at the client side using python which will then render it in the client side chat area 
 
 All of the clients are maintained as sockets which will store the information related to client like name, room, private key
+
+If the users want to share a file or document with in the chat room it is now possible they can just click the send file button and a link will be appeared in the chat room form which they can download the shared file
+
+---
+# Some pictures of the application
+
+### Home page
+
+![image](https://github.com/bhargava-sai-krishna/secure-text-transfer-using-deffie-hill-man/assets/100348267/f8046e73-4d15-4298-b933-25cf58ea7832)
+
+### Room Page
+
+![image](https://github.com/bhargava-sai-krishna/secure-text-transfer-using-deffie-hill-man/assets/100348267/5ed259da-ed82-42af-a20e-23d98b85c91c)
+
+### Users Messaging
+
+![image](https://github.com/bhargava-sai-krishna/secure-text-transfer-using-deffie-hill-man/assets/100348267/7608dbad-c5fe-432a-88e5-5fdcf14a4bc9)
+
+### Sharing the file
+
+![image](https://github.com/bhargava-sai-krishna/secure-text-transfer-using-deffie-hill-man/assets/100348267/79957bb0-1e1c-45e8-879a-18fcbf561347)
+
+![image](https://github.com/bhargava-sai-krishna/secure-text-transfer-using-deffie-hill-man/assets/100348267/2c053fc5-3df0-4bc6-9490-e442edad15ae)
+
