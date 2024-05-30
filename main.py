@@ -86,11 +86,27 @@ def message(data):
     
     content = {
         "name": session.get("name"),
-        "message": decrypt(data["data"],session.get("PK"))
+        "message": decrypt(data["data"],session.get("PK")),
+        "type":"message"
     }
     send(content, to=room)
     rooms[room]["messages"].append(content)
     print(f"{session.get('name')} said: {data['data']}")
+
+@socketio.on("file")
+def fileHandel(data):
+    room=session.get("room")
+    if room not in rooms:
+        return
+    fileName=decrypt(data["fileName"],session.get("PK"))
+    fileContent=decrypt(data["file"],session.get("PK"))
+    content={
+        "name":session.get("name"),
+        "message":{"file":fileContent,"fileName":fileName},
+        "type":"file"
+    }
+    send(content, to=room)
+    rooms[room]["messages"].append(content)  
 
 @socketio.on("connect")
 def connect(auth):
@@ -103,7 +119,7 @@ def connect(auth):
         return
     
     join_room(room)
-    send({"name": name, "message": "has entered the room"}, to=room)
+    send({"name": name, "message": "has entered the room","type":"message"}, to=room)
     rooms[room]["members"] += 1
     print(f"{name} joined room {room}")
 
@@ -118,7 +134,7 @@ def disconnect():
         if rooms[room]["members"] <= 0:
             del rooms[room]
     
-    send({"name": name, "message": "has left the room"}, to=room)
+    send({"name": name, "message": "has left the room","type":"message"}, to=room)
     print(f"{name} has left the room {room}")
 
 if __name__ == "__main__":
